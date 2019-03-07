@@ -1,5 +1,6 @@
-from bs4 import BeautifulSoup
 import urllib3
+from bs4 import BeautifulSoup
+
 
 def read_file(path):
     text_file = open(path)
@@ -19,7 +20,7 @@ def check_for_profanity(content):
 
     response_after_check = "There's profanity in this text file" if 'true' in soup.contents \
         else "No Profanity... This file is clean." if 'false' in soup.contents \
-        else "Something happended, maybe a bad request?"
+        else "Something happened, maybe a bad request?"
     return response_after_check
 
 
